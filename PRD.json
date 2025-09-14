@@ -1,0 +1,38 @@
+{
+    "Feature-Id": {
+        "Summary": "Feature Title",
+        "Description": "Detailed description of the feature.",
+        "User story": "As a [type of user], I want [an action] so that [a benefit/a value].",
+        "Status": "In Progress"
+    },
+    "001-Modifier-Input": {
+        "Summary": "User inputs starting and ending values for a modifier.",
+        "Description": "User selects a modifier (gamespeed, gravity, boost) and inputs starting and ending values.",
+        "User story": "As a player, I want to set the range for a modifier so that I can customize gameplay parameters.",
+        "Status": "Planned"
+    },
+    "002-Key-Range-Selection": {
+        "Summary": "User selects a continuous range of keys for keybinds.",
+        "Description": "User chooses a continuous range of keys (default: 1-0 on the number row) to assign keybinds.",
+        "User story": "As a player, I want to select which keys will be used for binds so that I can control modifier values easily.",
+        "Status": "Planned"
+    },
+    "003-Command-Distribution": {
+        "Summary": "App generates commands that evenly distribute modifier values across selected keys.",
+        "Description": "App calculates values using k(n) = min + ((max-min)/(n))^n and generates commands like bind Key 'sv_soccar_gamespeed k(n)'. Multiple modifiers (gamespeed, gravity, boost) can be enabled and combined in a single bind command. Key names for number row and numpad are converted to English equivalents (e.g., One, Two, ..., Zero; NumpadOne, ..., NumpadZero) for console compatibility. Command output is formatted with semicolons after each line except the last, allowing all commands to be pasted at once into the console.",
+        "User story": "As a player, I want the app to automatically create keybind commands with evenly distributed modifier values, supporting multiple modifiers and console-compatible key names, so that setup is fast, accurate, and easy to use.",
+        "Status": "Planned"
+    },
+    "004-Copy-To-Clipboard": {
+        "Summary": "Copy command output to clipboard with a single click.",
+        "Description": "Provides a button or overlay that allows users to easily copy the generated command output to the clipboard. When the mouse hovers over the code block, a 'Click to copy' text overlays the section, and clicking performs the copy action.",
+        "User story": "As a player, I want to quickly copy all generated commands so that I can paste them into the console without manual selection.",
+        "Status": "Planned"
+    },
+    "005-Realtime-Command-Update": {
+        "Summary": "Command output updates in real time as user changes inputs.",
+        "Description": "Removes the need for a 'Generate Commands' button. The command output is automatically updated whenever the user changes any input or selection.",
+        "User story": "As a player, I want the command output to update instantly as I adjust settings so that I can see the results without extra clicks.",
+        "Status": "Planned"
+    }
+}
