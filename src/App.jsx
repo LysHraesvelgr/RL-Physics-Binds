@@ -16,6 +16,13 @@ const keyOptions = [
     {label: '0', name: 'Zero'}
   ],
   [
+    {label: '1', name: 'One'},
+    {label: '2', name: 'Two'},
+    {label: '3', name: 'Three'},
+    {label: '4', name: 'Four'},
+    {label: '5', name: 'Five'}
+  ],
+  [
     {label: 'Q', name: 'Q'},
     {label: 'W', name: 'W'},
     {label: 'E', name: 'E'},
@@ -38,6 +45,28 @@ const keyOptions = [
     {label: 'Numpad8', name: 'NumpadEight'},
     {label: 'Numpad9', name: 'NumpadNine'},
     {label: 'Numpad0', name: 'NumpadZero'}
+  ],
+  [
+    {label: '1', name: 'One'},
+    {label: '2', name: 'Two'},
+    {label: '3', name: 'Three'},
+    {label: '4', name: 'Four'},
+    {label: '5', name: 'Five'},
+    {label: '6', name: 'Six'},
+    {label: '7', name: 'Seven'},
+    {label: '8', name: 'Eight'},
+    {label: '9', name: 'Nine'},
+    {label: '0', name: 'Zero'},
+    {label: 'Q', name: 'Q'},
+    {label: 'W', name: 'W'},
+    {label: 'E', name: 'E'},
+    {label: 'R', name: 'R'},
+    {label: 'T', name: 'T'},
+    {label: 'Y', name: 'Y'},
+    {label: 'U', name: 'U'},
+    {label: 'I', name: 'I'},
+    {label: 'O', name: 'O'},
+    {label: 'P', name: 'P'}
   ]
 ];
 
@@ -114,8 +143,10 @@ function App() {
         <label>Key Range:&nbsp;
           <select value={keySetIdx} onChange={e => setKeySetIdx(Number(e.target.value))}>
             <option value={0}>1-0 (Number row)</option>
-            <option value={1}>Q-P</option>
-            <option value={2}>Numpad1-Numpad0</option>
+            <option value={1}>1-5 (Number row)</option>
+            <option value={2}>Q-P</option>
+            <option value={3}>Numpad1-Numpad0</option>
+            <option value={4}>1-P (two rows)</option>
           </select>
         </label>
       </div>
