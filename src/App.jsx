@@ -42,7 +42,7 @@ const keyOptions = [
 ];
 
 function App() {
-  const [enabled, setEnabled] = useState({ gamespeed: true, gravity: true, boost: true });
+  const [enabled, setEnabled] = useState({ gamespeed: true, gravity: false, boost: false });
   const [values, setValues] = useState({
     gamespeed: { min: 0.666, max: 1 },
     gravity: { min: 0.8, max: 1 },
