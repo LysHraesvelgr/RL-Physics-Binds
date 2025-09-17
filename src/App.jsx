@@ -125,17 +125,17 @@ function App() {
     <div className="App">
       <h2>RL Physics Binds Generator</h2>
       <div>
-        <label><input type="checkbox" checked={enabled.gamespeed} onChange={e => setEnabled(en => ({...en, gamespeed: e.target.checked}))}/> Gamespeed</label>
+        <label><input type="checkbox" checked={enabled.gamespeed} onChange={e => setEnabled(en => ({...en, gamespeed: e.target.checked}))}/> Gamespeed </label>
         <label>Start: <input type="number" step="0.01" value={values.gamespeed.min} onChange={e => handleValueChange('gamespeed', 'min', e.target.value)} /></label>
         <label>End: <input type="number" step="0.01" value={values.gamespeed.max} onChange={e => handleValueChange('gamespeed', 'max', e.target.value)} /></label>
       </div>
       <div>
-        <label><input type="checkbox" checked={enabled.gravity} onChange={e => setEnabled(en => ({...en, gravity: e.target.checked}))}/> Gravity</label>
+        <label><input type="checkbox" checked={enabled.gravity} onChange={e => setEnabled(en => ({...en, gravity: e.target.checked}))}/> Gravity </label>
         <label>Start: <input type="number" step="0.01" value={values.gravity.min} onChange={e => handleValueChange('gravity', 'min', e.target.value)} /></label>
         <label>End: <input type="number" step="0.01" value={values.gravity.max} onChange={e => handleValueChange('gravity', 'max', e.target.value)} /></label>
       </div>
       <div>
-        <label><input type="checkbox" checked={enabled.boost} onChange={e => setEnabled(en => ({...en, boost: e.target.checked}))}/> Boost</label>
+        <label><input type="checkbox" checked={enabled.boost} onChange={e => setEnabled(en => ({...en, boost: e.target.checked}))}/> Boost Strength </label>
         <label>Start: <input type="number" step="0.01" value={values.boost.min} onChange={e => handleValueChange('boost', 'min', e.target.value)} /></label>
         <label>End: <input type="number" step="0.01" value={values.boost.max} onChange={e => handleValueChange('boost', 'max', e.target.value)} /></label>
       </div>
