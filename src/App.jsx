@@ -159,7 +159,7 @@ function App() {
         </pre>
         {showCopy && output.length > 0 && (
           <div style={{position: 'absolute', top: 30, left: 0, right: 0, textAlign: 'center', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '0.5em', pointerEvents: 'none'}}>
-            {copied ? 'Copied!' : 'Click to copy'}
+            {copied ? 'Copied!' : 'Click to copy, paste in bakkesmod console (F6)'}
           </div>
         )}
       </div>
