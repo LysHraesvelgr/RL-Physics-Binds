@@ -71,11 +71,11 @@ export function ScalarPhysicsGenerator() {
                         // Key 1: divide gamespeed & gravity, multiply boost (multiplier effect)
                         if (en.gamespeed) parts.push(`cvar_divide ${physicsVector.gamespeed} ${scalarVal}`);
                         if (en.gravity) parts.push(`cvar_divide ${physicsVector.gravity} ${scalarVal}`);
-                        if (en.boost) parts.push(`cvar_mult ${physicsVector.boost} ${scalarVal}`);
+                        if (en.boost) parts.push(`cvar_multiply ${physicsVector.boost} ${scalarVal}`);
                     } else if (idx === 1) {
                         // Key 2: multiply gamespeed & gravity, divide boost (inverse effect)
-                        if (en.gamespeed) parts.push(`cvar_mult ${physicsVector.gamespeed} ${scalarVal}`);
-                        if (en.gravity) parts.push(`cvar_mult ${physicsVector.gravity} ${scalarVal}`);
+                        if (en.gamespeed) parts.push(`cvar_multiply ${physicsVector.gamespeed} ${scalarVal}`);
+                        if (en.gravity) parts.push(`cvar_multiply ${physicsVector.gravity} ${scalarVal}`);
                         if (en.boost) parts.push(`cvar_divide ${physicsVector.boost} ${scalarVal}`);
                     } else {
                         // Key 3: reset all to defaults
