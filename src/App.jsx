@@ -124,7 +124,7 @@ function RLPhysicsGenerator() {
 
   return (
     <div className="App">
-      <h2>RL Physics Binds Generator</h2>
+      <h2>Physics Interval Binds</h2>
       <div>
         <label><input type="checkbox" checked={enabled.gamespeed} onChange={e => setEnabled(en => ({...en, gamespeed: e.target.checked}))}/> Gamespeed </label>
         <label>Start: <input type="number" step="0.01" value={values.gamespeed.min} onChange={e => handleValueChange('gamespeed', 'min', e.target.value)} /></label>
@@ -173,7 +173,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Mode</h1>
+      
       
       <label style={{display: 'flex', alignItems: 'center', gap: '0.5em'}}>
         Switch mode:&nbsp;

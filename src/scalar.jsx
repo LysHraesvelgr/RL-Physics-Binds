@@ -47,7 +47,7 @@ export function ScalarPhysicsGenerator() {
                     <select value={keySetIdx} onChange={e => setKeySetIdx(Number(e.target.value))}>
                         <option value={0}>1-3 (Number row)</option>
                         <option value={1}>1-3 (Numpad)</option>
-                        <option value={2}>Num- Num+ Num0 (Numpad)</option>
+                        <option value={2}>- + 0 (Numpad)</option>
                     </select>
                 </label>
             </div>
