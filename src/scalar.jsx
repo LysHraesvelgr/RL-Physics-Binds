@@ -12,8 +12,13 @@ const keyOptions = [
         {label: 'Num3', name: 'NumpadThree'},
     ],
     [
-        {label: 'Num-', name: 'NumpadMinus'},
-        {label: 'Num+', name: 'NumpadPlus'},
+        {label: 'Num-', name: 'Subtract'},
+        {label: 'Num+', name: 'Add'},
+        {label: 'Num0', name: 'NumpadZero'},
+    ],
+    [
+        {label: 'Num/', name: 'Divide'},
+        {label: 'Num*', name: 'Multiply'},
         {label: 'Num0', name: 'NumpadZero'},
     ]
 ]
@@ -26,7 +31,7 @@ const physicsVector = {
 
 export function ScalarPhysicsGenerator() {
     const [scalar, setScalar] = useState(1.01639635681);
-    const [keySetIdx, setKeySetIdx] = useState(0);
+    const [keySetIdx, setKeySetIdx] = useState(3);
     const [enabled, setEnabled] = useState({ gamespeed: true, gravity: false, boost: false });
     const [showCopy, setShowCopy] = useState(false);
     const [copied, setCopied] = useState(false);
@@ -48,6 +53,7 @@ export function ScalarPhysicsGenerator() {
                         <option value={0}>1-3 (Number row)</option>
                         <option value={1}>1-3 (Numpad)</option>
                         <option value={2}>- + 0 (Numpad)</option>
+                        <option value={3}>/ * 0 (Numpad)</option>
                     </select>
                 </label>
             </div>

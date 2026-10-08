@@ -4,6 +4,7 @@ Access the app [here][1]
 
 ## Usage
 
+### Interval Mode
 Specify minimum and maximum values for
 > gamespeed \
 > gravity \
@@ -11,6 +12,22 @@ Specify minimum and maximum values for
 
 to have a bakkesmod command made for you 
 that evenly distributes the mutator over a range of keybinds
+
+---
+
+### Scalar Mode
+An alternative that multiplies/divides the current values using two keybinds:
+
+- **Key 1** : Decreases gamespeed/gravity, increases boost
+- **Key 2** : Increases gamespeed/gravity, decreases boost
+- **Key 3**: Resets all values to defaults
+
+Enter a scalar multiplier (>1) and select which physics toggles you want:
+> gamespeed \
+> gravity \
+> boost modifier
+
+The generator produces two keybind commands and a reset keybind.
 
 ---
 
