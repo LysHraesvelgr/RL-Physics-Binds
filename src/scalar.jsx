@@ -25,21 +25,11 @@ const physicsVector = {
 }
 
 export function ScalarPhysicsGenerator() {
-    const [scalar, setScalar] = useState(1.05);
+    const [scalar, setScalar] = useState(1.01639635681);
     const [keySetIdx, setKeySetIdx] = useState(0);
     const [enabled, setEnabled] = useState({ gamespeed: true, gravity: false, boost: false });
     const [showCopy, setShowCopy] = useState(false);
     const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-        const commandText = output.map((line, idx) => 
-            idx < output.length - 1 ? line + ';' : line
-        ).join('\n');
-        navigator.clipboard.writeText(commandText).then(() => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        });
-    };
 
     return (
         <div>
@@ -50,13 +40,13 @@ export function ScalarPhysicsGenerator() {
                 <label><input type="checkbox" checked={enabled.boost} onChange={e => setEnabled(en => ({...en, boost: e.target.checked}))}/> Boost Modifier </label>
             </div>
             <div>
-                <label>Mult Value: <input type="number" step="0.01" value={scalar} onChange={e => setScalar(Number(e.target.value))} /></label>
+                <label>Mult Value: <input type="number" step="0.01" min="1" value={scalar} onChange={e => setScalar(Number(e.target.value))} /></label>
             </div>
             <div>
-                <label>Key Range:&nbsp;
+                <label>Keys to Bind:&nbsp;
                     <select value={keySetIdx} onChange={e => setKeySetIdx(Number(e.target.value))}>
                         <option value={0}>1-3 (Number row)</option>
-                        <option value={1}>Num1-Num3 (Numpad)</option>
+                        <option value={1}>1-3 (Numpad)</option>
                         <option value={2}>Num- Num+ Num0 (Numpad)</option>
                     </select>
                 </label>
@@ -83,12 +73,23 @@ export function ScalarPhysicsGenerator() {
                         if (en.boost) parts.push(`cvar_divide ${physicsVector.boost} ${scalarVal}`);
                     } else {
                         // Key 3: reset all to defaults
-                        parts.push(`cvar_set ${physicsVector.gamespeed} 1`);
-                        parts.push(`cvar_set ${physicsVector.gravity} -650`);
-                        parts.push(`cvar_set ${physicsVector.boost} 1`);
+                        if (en.gamespeed) parts.push(`${physicsVector.gamespeed} 1`);
+                        if (en.gravity) parts.push(`${physicsVector.gravity} -650`);
+                        if (en.boost) parts.push(`${physicsVector.boost} 1`);
                     }
                     return `bind ${key.name} "${parts.join('; ')}"`;
                 });
+
+                
+                const handleCopy = () => {
+                    const commandText = output.map((line, idx) => 
+                        idx < output.length - 1 ? line + ';' : line
+                    ).join('\n');
+                    navigator.clipboard.writeText(commandText).then(() => {
+                        setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
+                    });
+                };
 
                 return (
                     <div style={{marginTop: '1em', position: 'relative'}}
