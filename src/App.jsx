@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import { ScalarPhysicsGenerator } from './scalar.jsx'
 
 const keyOptions = [
   // Display names, actual console names
@@ -70,7 +71,7 @@ const keyOptions = [
   ]
 ];
 
-function App() {
+function RLPhysicsGenerator() {
   const [enabled, setEnabled] = useState({ gamespeed: true, gravity: false, boost: false });
   const [values, setValues] = useState({
     gamespeed: { min: 0.666, max: 1 },
@@ -167,4 +168,27 @@ function App() {
   );
 }
 
-export default App
+function App() {
+  const [activeTab, setActiveTab] = useState('full'); // 'full' or 'simplified'
+
+  return (
+    <div className="App">
+      <h1>Mode</h1>
+      
+      <label style={{display: 'flex', alignItems: 'center', gap: '0.5em'}}>
+        Switch mode:&nbsp;
+        <select 
+          style={{padding: '0.4em 0.8em'}} 
+          value={activeTab} 
+          onChange={e => setActiveTab(e.target.value)}>
+            <option value="full">Preset Intervals</option>
+            <option value="simplified">Scalar adjustment</option>
+        </select>
+      </label>
+
+      {activeTab === 'full' ? <RLPhysicsGenerator /> : <ScalarPhysicsGenerator />}
+    </div>
+  );
+}
+
+export default App;

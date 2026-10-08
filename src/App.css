@@ -9,11 +9,40 @@
   height: 100%;
 }
 
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.tab-selector {
+  font-weight: 600;
+  padding: 0.4em 0.8em;
+  background: #1e2d13;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tab-selector:hover {
+  background: #2a3f1c;
+  cursor: pointer;
+}
+
 label {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit
+  text-decoration: inherit;
+  cursor: default;
 }
+
 label:hover {
-  color: #be91ec
+  color: #be91ec;
 }
